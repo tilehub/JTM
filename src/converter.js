@@ -1,12 +1,13 @@
 
-var TMXJsonToJTM = function(tmx) {
+let TMXJsonToJTM = tmx => {
     //ToDo: convert TMX to JTM
 }
 
-var JTMToTMXJson = function(jtm) {
+let JTMToTMXJson = jtm => {
    //ToDo: convert TMX to JTM
 }
 
+/*  Optional
 var TMXxmlToTMXJson = function(tmx) {
    //ToDo: convert TMX to JTM
 }
@@ -22,3 +23,4 @@ var JTMToTMXxml = function(jtm) {
 var TMXxmlToJTM = function(tmx) {
     //ToDo: convert TMX to JTM
 }
+*/
