@@ -1,3 +1,3 @@
 module.exports = {
-    converter: reqire('./src/converter')
+    converter: require('./src/converter')
 }
