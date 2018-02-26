@@ -9,7 +9,7 @@ test('tmx to jtm', async () => {
     let eyy = new jtm()
     const readFilePromise = promisify(fs.readFile)
     let jsonMapOrig = JSON.parse(await readFilePromise('./test/space_orig.json'))
-    let jtmMap = eyy.TMXJsonToJTM(jsonMapOrig)
+    let jtmMap = eyy.TMXJsonToJTM(jsonMapOrig, {"space_tiles.json": JSON.parse(await readFilePromise('./test/space_tiles.json'))})
 
     fs.writeFile('./test/space.jtm', JSON.stringify(jtmMap, null, '\t'), async (err) => {
         if (err) { throw err }
@@ -21,6 +21,6 @@ test('tmx to jtm', async () => {
             if (err) { throw err }
         })
 
-        expect(jsonMap).toEqual(jsonMapOrig)
+        expect(jsonMap).toEqual(JSON.parse(await readFilePromise('./test/space_includedSrc.json')))
     })
 })
