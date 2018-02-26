@@ -1,3 +1,3 @@
 module.exports = {
-    converter: require('./src/converter')
+    JTM: require('./src/converter').JTM
 }
