@@ -26,8 +26,8 @@ test('tmx to jtm', async () => {
                 })
 
                 expect(jsonMap).toEqual(JSON.parse(await readFilePromise('./test/space_externalSrc.json')))
-                expect(JSON.parse(await readFilePromise('./test/space_tiles.json')).toEqual(
-                    JSON.parse(await readFilePromise('./test/__' + i))))
+                expect(JSON.parse(await readFilePromise('./test/space_tiles.json'))).toEqual(
+                    JSON.parse(await readFilePromise('./test/__' + i)))
             })
         }
     })

@@ -4,7 +4,7 @@ class JTM {
 
     }
 
-    TMXJsonToJTM (tmx, tsx) {
+    TMXJsonToJTM (tmx, tsx = {}) {
         /**
          * tsx: {'filename of tileset': 'data inside the file'}
          */
