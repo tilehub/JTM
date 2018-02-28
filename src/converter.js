@@ -27,27 +27,36 @@ class JTM {
                 jtm['layers'][j] = i
                 j++
             }
-            /* include external tilesets */
+            /* export internal tilesets */
             for (let i in jtm['tilesets']) {
+                let fgid = jtm['tilesets'][i]['firstgid']
                 if (jtm['tilesets'][i].hasOwnProperty('source')) { /* if it has a source check if it is in json */
                     if (jtm['tilesets'][i]['source'].endsWith('.json')) {
-                        let fgid = jtm['tilesets'][i]['firstgid']
                         if (typeof tsx === typeof undefined || !tsx.hasOwnProperty(jtm['tilesets'][i]['source'])) {
                             throw Error('Tileset has not been Supplied')
-                        } else {
+                        } /* else {
                             jtm['tilesets'][i] = tsx[jtm['tilesets'][i]['source']]
                             jtm['tilesets'][i]['firstgid'] = fgid
-                        }
+                        } */
                     } else {
                         throw Error('Tileset has to be embedded or in JSON')
                     }
+                } else {
+                    let name = jtm['tilesets'][i]['name']
+                    while (tsx.hasOwnProperty(name + '.json')) {
+                        name += '_'
+                    }
+                    name += '.json'
+                    tsx[name] = jtm['tilesets'][i]
+                    delete tsx[name]['firstgid']
+                    jtm['tilesets'][i] = {'firstgid': fgid, 'source': name}
                 }
             }
         }
-        return jtm
+        return [jtm, tsx]
     }
 
-    JTMToTMXJson (jtm) {
+    JTMToTMXJson (jtm, tsx) {
         let tmx = JSON.parse(JSON.stringify(jtm))
         /*
         if (tmx['tiledversion'] !== '1.0.3') {
@@ -65,7 +74,7 @@ class JTM {
                 tmx['layers'].push(layers[i])
             }
         }
-        return tmx
+        return [tmx, tsx]
     }
 
     // Optional

@@ -1,132 +1,112 @@
-{ "columns":0,
- "grid":
-    {
-     "height":1,
-     "orientation":"orthogonal",
-     "width":1
-    },
- "margin":0,
- "name":"space_tiles",
- "spacing":0,
- "tilecount":19,
- "tileheight":64,
- "tiles":
-    {
-     "10":
-        {
-         "image":"tiles\/steel.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "11":
-        {
-         "image":"tiles\/water.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "12":
-        {
-         "image":"tiles\/wood.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "13":
-        {
-         "image":"tiles\/dirt.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "14":
-        {
-         "image":"tiles\/alu.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "15":
-        {
-         "image":"tiles\/aliensteel.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "16":
-        {
-         "image":"tiles\/placeholder.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "17":
-        {
-         "image":"objects\/alien.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "18":
-        {
-         "image":"objects\/astronaut.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "19":
-        {
-         "image":"objects\/engineer.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "20":
-        {
-         "image":"objects\/fish.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "21":
-        {
-         "image":"objects\/barrel.png",
-         "imageheight":32,
-         "imagewidth":32
-        },
-     "22":
-        {
-         "image":"objects\/bullet.png",
-         "imageheight":32,
-         "imagewidth":32
-        },
-     "23":
-        {
-         "image":"objects\/gun.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "24":
-        {
-         "image":"objects\/heart.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "25":
-        {
-         "image":"objects\/swirl.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "26":
-        {
-         "image":"objects\/tree.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "8":
-        {
-         "image":"tiles\/grass.png",
-         "imageheight":64,
-         "imagewidth":64
-        },
-     "9":
-        {
-         "image":"tiles\/mosaic.png",
-         "imageheight":64,
-         "imagewidth":64
-        }
-    },
- "tilewidth":64,
- "type":"tileset"
+{
+	"columns": 0,
+	"grid": {
+		"height": 1,
+		"orientation": "orthogonal",
+		"width": 1
+	},
+	"margin": 0,
+	"name": "space_tiles",
+	"spacing": 0,
+	"tilecount": 19,
+	"tileheight": 64,
+	"tiles": {
+		"8": {
+			"image": "tiles/grass.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"9": {
+			"image": "tiles/mosaic.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"10": {
+			"image": "tiles/steel.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"11": {
+			"image": "tiles/water.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"12": {
+			"image": "tiles/wood.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"13": {
+			"image": "tiles/dirt.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"14": {
+			"image": "tiles/alu.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"15": {
+			"image": "tiles/aliensteel.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"16": {
+			"image": "tiles/placeholder.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"17": {
+			"image": "objects/alien.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"18": {
+			"image": "objects/astronaut.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"19": {
+			"image": "objects/engineer.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"20": {
+			"image": "objects/fish.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"21": {
+			"image": "objects/barrel.png",
+			"imageheight": 32,
+			"imagewidth": 32
+		},
+		"22": {
+			"image": "objects/bullet.png",
+			"imageheight": 32,
+			"imagewidth": 32
+		},
+		"23": {
+			"image": "objects/gun.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"24": {
+			"image": "objects/heart.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"25": {
+			"image": "objects/swirl.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		},
+		"26": {
+			"image": "objects/tree.png",
+			"imageheight": 64,
+			"imagewidth": 64
+		}
+	},
+	"tilewidth": 64,
+	"type": "tileset"
 }
