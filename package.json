@@ -4,7 +4,7 @@
   "description": "converter between jtm and tmx",
   "main": "index.js",
   "scripts": {
-      "test": "jest"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/tilehub/JTM#readme",
   "dependencies": {
-    "eslint": "^4.18.0",
-    "jest": "^22.3.0",
-    "tilehub.standard": "git+https://github.com/tilehub/standard.git"
+    "eslint": "^4.18.2",
+    "jest": "^22.4.2",
+    "object-types": "^1.1.0",
+    "tilehub.standard": "git+https://github.com/tilehub/standard.git",
+    "xml2js": "^0.4.19"
   }
 }

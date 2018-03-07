@@ -1,3 +1,6 @@
+let xml2js = require('xml2js')
+let parser = new xml2js.Parser({explicitArray: true}) // Parser Objekt
+const objectTypes = require('object-types')
 
 class JTM {
     constructor () {
@@ -77,23 +80,88 @@ class JTM {
         return [tmx, tsx]
     }
 
+    async TMXJsonToTMXxml (tmx) {
+        let builder = new xml2js.Builder({headless: true, explicitRoot: true})
+        let xml = builder.buildObject(tmx)
+        xml = xml.replace(/&lt;/g, '<')
+        xml = xml.replace(/&gt;/g, '>')
+        xml = xml.replace(/<root>/g, '')
+        xml = xml.replace(/<\/root>/g, '')
+        return xml
+    }
+
+    async TMXxmlToTMXJson (tmx) {
+        return new Promise((resolve, reject) => {
+            parser.parseString(tmx, (err, result) => {
+                if (err) { reject(err) }
+                result = result['map']
+
+                // Recursive Function to iterate through the whole JSON
+                let rec = function (json) {
+                    // Keys to the next objects
+                    let keys = Object.keys(json)
+                    for (let i of keys) {
+                        //
+                        if (objectTypes(Object(json[i])) === 'array') {
+                            for (let j in json[i]) {
+                                json[i][j] = rec(json[i][j])
+                            }
+                        }
+
+                        if (i === '_') {
+                            let str = json[i]
+                            str = str.replace(/ /g, '')
+                            str = str.replace(/\n/g, '')
+                            json[i] = str.split(',')
+                        } else if (i === '$') {
+                            let sub = JSON.parse(JSON.stringify(json[i]))
+                            delete json[i]
+                            json = Object.assign(json, sub)
+                            //                            console.log(json)
+                        } else {
+                            if (json[i].type !== String) {
+                                //                                console.log('eyy')
+                            }
+                        }
+                    }
+                    return json
+                }
+
+                result = rec(result)
+                let tileLayer = []
+
+                tileLayer.push(result['layer'])
+
+                tileLayer.push(result['objectgroup'])
+
+                for (let i of tileLayer[0]) {
+                    console.log('some')
+                    i['data'] = i['data'][0]['_']
+                }
+
+                delete result['layer']
+                delete result['objectgroup']
+
+                result['layers'] = tileLayer[0].concat(tileLayer[1])
+                resolve(this.DeepCopy(result))
+            })
+        })
+    }
+
+    DeepCopy (json) {
+        return JSON.parse(JSON.stringify(json))
+    }
+
     // Optional
 
     /*
-    var TMXxmlToTMXJson = (tmx) => {
-       //ToDo: convert TMX to JTM
-    }
-
-    var TMXJsonToTMXxml = (tmx) => {
-       //ToDo: convert TMX to JTM
-    }
 
     var JTMToTMXxml = (jtm) => {
-       //ToDo: convert TMX to JTM
+       // ToDo: convert TMX to JTM
     }
 
     var TMXxmlToJTM = (tmx) => {
-        //ToDo: convert TMX to JTM
+        // ToDo: convert TMX to JTM
     }
     */
 }
