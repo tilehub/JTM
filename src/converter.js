@@ -119,8 +119,11 @@ class JTM {
                             json = Object.assign(json, sub)
                             //                            console.log(json)
                         } else {
-                            if (json[i].type !== String) {
-                                //                                console.log('eyy')
+                            if (typeof json[i] === 'string') {
+                                console.log(json[i])
+                                if (!isNaN(parseFloat(json[i]))) {
+                                    json[i] = parseFloat(json[i])
+                                }
                             }
                         }
                     }
