@@ -3,9 +3,7 @@ let parser = new xml2js.Parser({explicitArray: true}) // Parser Objekt
 const objectTypes = require('object-types')
 
 class JTM {
-    constructor () {
-
-    }
+    constructor () {}
 
     async TMXJsonToJTM (tmx, tsx = {}) {
         /**
@@ -234,8 +232,9 @@ class JTM {
     }
 
     async JTMToTMXxml (jtm, tsx = {}) {
-        let a = await this.JTMToTMXJson(jtm, tsx)
+        a = await this.JTMToTMXJson(jtm, tsx)
         return this.TMXJsonToTMXxml(a[0], a[1])
+
     }
 
     async TMXxmlToJTM (tmx, tsx = {}) {
