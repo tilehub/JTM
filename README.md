@@ -7,7 +7,7 @@ JTM is a derivative of the TMX map format ([http://doc.mapeditor.org/en/latest/r
 To install type:
 
 ```
-npm install tilehub.jtm --save
+npm install https://github.com/tilehub/jtm --save
 ```
 
 # Usage
