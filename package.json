@@ -19,6 +19,7 @@
   "dependencies": {
     "eslint": "^4.18.2",
     "jest": "^22.4.2",
+    "jsondiffpatch": "^0.3.7",
     "object-types": "^1.1.0",
     "tilehub.standard": "git+https://github.com/tilehub/standard.git",
     "xml2js": "^0.4.19"
