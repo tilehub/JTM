@@ -7,20 +7,20 @@ JTM is a derivative of the TMX map format ([http://doc.mapeditor.org/en/latest/r
 To install type:
 
 ```
-npm install tilehub.jtm --save
+npm install https://github.com/tilehub/jtm --save
 ```
 
 # Usage
 
 to use the package import it by typing:
 ```
-jtm = require('jtm').JTM
+let jtm = require('jtm').JTM
 ```
 
 and then instanciate it with:
 
 ```
-let converter = jtm()
+let converter = new jtm()
 ```
 
 ## TMXJsonToJTM
